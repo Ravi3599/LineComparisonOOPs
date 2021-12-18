@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class LineComparison {
 	public static int x1,x2,y1,y2,x3,x4,y3,y4;
+	
 	public static void main(String[] args) {
 		getInput();
 		CalculateLength cal = new CalculateLength();
