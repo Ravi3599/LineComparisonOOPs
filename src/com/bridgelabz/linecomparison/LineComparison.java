@@ -4,13 +4,12 @@ import java.util.Scanner;
 
 public class LineComparison {
 	public static int x1,x2,y1,y2,x3,x4,y3,y4;
-	
 	public static void main(String[] args) {
 		getInput();
 		CalculateLength cal = new CalculateLength();
 		cal.calLength();
-		CheckEquality check = new CheckEquality();
-		check.checkEquality();
+		CompareLength compare = new CompareLength();
+		compare.checkEquality();
 	}
 	public static void getInput() {
 		Scanner sc = new Scanner(System.in);
@@ -39,14 +38,18 @@ class CalculateLength{
 			System.out.println("Length of second line = "+length2+" units");
 		}
 }
-class CheckEquality{
+class CompareLength{
 		public  void checkEquality() {
-			if(CalculateLength.length1.equals(CalculateLength.length2)) {
-				System.out.println("Both lines are EQUAL in length");
+			if(CalculateLength.length1.compareTo(CalculateLength.length2) == 1) {
+				System.out.println("Line1 is greater than line2 in length");
+			}
+			else if (CalculateLength.length1.compareTo(CalculateLength.length2) == -1) {
+				System.out.println("Line1 is less than line2 in length");
 			}
 			else {
-				System.out.println("Both lines are NOT EQUAL in length");
+				System.out.println("Both lines are EQUAL in length");
 			}
 		}
 }
+
 
